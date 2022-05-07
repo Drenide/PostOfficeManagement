@@ -1,0 +1,5 @@
+C:\Users\Dreni\source\repos\PostOfficeManagement\PostOfficeManagement.BO\bin\Debug\PostOfficeManagement.BO.dll
+C:\Users\Dreni\source\repos\PostOfficeManagement\PostOfficeManagement.BO\bin\Debug\PostOfficeManagement.BO.pdb
+C:\Users\Dreni\source\repos\PostOfficeManagement\PostOfficeManagement.BO\obj\Debug\PostOfficeManagement.BO.csprojAssemblyReference.cache
+C:\Users\Dreni\source\repos\PostOfficeManagement\PostOfficeManagement.BO\obj\Debug\PostOfficeManagement.BO.dll
+C:\Users\Dreni\source\repos\PostOfficeManagement\PostOfficeManagement.BO\obj\Debug\PostOfficeManagement.BO.pdb
