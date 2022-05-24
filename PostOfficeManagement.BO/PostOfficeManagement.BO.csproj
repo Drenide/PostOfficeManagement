@@ -37,6 +37,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
+    <Compile Include="Klientela.cs" />
+    <Compile Include="Klienti.cs" />
     <Compile Include="Kompania.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Porosite.cs" />
@@ -46,6 +48,7 @@
     <Compile Include="RegjistrimiKlientit.cs" />
     <Compile Include="RegjistrimiPunetorit.cs" />
     <Compile Include="Sender.cs" />
+    <Compile Include="Users.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

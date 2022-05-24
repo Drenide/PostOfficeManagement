@@ -15,6 +15,7 @@ namespace PostOfficeManagement.BO
         public int PeshaProduktit { get; set; }
         public string Hapja { get; set; }
         public string Exchange { get; set; }
+        public string Status { get; set; }
         public string PershkrimiProduktit { get; set; }
     }
 }

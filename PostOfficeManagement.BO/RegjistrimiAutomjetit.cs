@@ -8,10 +8,10 @@ namespace PostOfficeManagement.BO
     {
         public string Prodhuesi { get; set; }
         public string Modeli { get; set; }
-        public string Viti_Prodhimit { get; set; }
+        public DateTime Viti_Prodhimit { get; set; }
         public int Motorri { get; set; }
-        public string Pesha { get; set; }
+        public int Pesha { get; set; }
         public string LlojiKarburantit { get; set; }
-        public string PeshaMaksimale { get; set; }
+        public int PeshaMaksimale { get; set; }
     }
 }
