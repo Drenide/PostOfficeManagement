@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,25 +8,76 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Diagnostics;
-using PostOfficeManagement.BO;
+using System.Data.SqlClient;
 using PostOfficeManagement.BLL;
-
-
+using PostOfficeManagement.BO;
 
 namespace PostOfficeManagement
 {
-    public partial class Login : Form
+    public partial class AdminLogin : Form
     {
-        private KlientiBLL _KlientiBLL;
-
-
-        public Login()
+        private UserBLL UserBLL;
+        public AdminLogin()
         {
-            _KlientiBLL = new KlientiBLL();
+            UserBLL = new UserBLL();
             InitializeComponent();
-            
+           
+        }
+
+        private void txtPassEnter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text.Equals(@"Password"))
+            {
+                txtPassword.Text = "";
+            }
+        }
+
+        private void txtPassLeave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text.Equals(@""))
+            {
+                txtPassword.Text = "Password";
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Login ss = new Login();
+            ss.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Users users = new Users
+            {
+                Name = txtName.Text,
+                Password = txtPassword.Text
+            };
+            UserBLL.GetUsers(users);
+            if (users.Role_Id == 2)
+            {
+                DialogResult dr = MessageBox.Show("Ky user eshte i perdoruesit.Deshironi qe te kyqeni?", "Login", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dr == DialogResult.Yes)
+                {
+                    MessageBox.Show("Ju keni hyre me sukses!");
+                    this.Hide();
+                    Menu s = new Menu();
+                    s.Show();
+                }
+            }
+            else if (users.Role_Id == 1)
+            {
+                MessageBox.Show("Ju keni hyre me sukses!");
+                AdminForm s = new AdminForm();
+                s.Show();
+            }
+            else
+            {
+                MessageBox.Show("Ky user nuk ekziston.Ju lutem,kontrolloni perseri!");
+            }
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -39,74 +89,26 @@ namespace PostOfficeManagement
                 Application.Exit();
             }
         }
-        
-        private void button6_Click(object sender, EventArgs e)
+
+        private void txtNameEnter(object sender, EventArgs e)
         {
-            Klienti klienti = new Klienti
+            if (txtName.Text.Equals(@"Admin"))
             {
-                Name = txtUsername.Text,
-                Password = txtPassword.Text
-            };
-            _KlientiBLL.MerreKlientin(klienti);
-            if(klienti.Role_Id == 1)
-            {
-                MessageBox.Show("Ky username eshte i ndaluar!Ju lutem,shkruani Userin tuaj!");
-            }
-            else if(klienti.Role_Id == 2)
-            {
-                MessageBox.Show("Ju keni hyre me sukses!");
-                this.Hide();
-                Menu s = new Menu();
-                s.Show();
-            }
-            else
-            {
-                MessageBox.Show("Ky user nuk ekziston.Ju lutem,kontrolloni perseri!");
+                txtName.Text = "";
             }
         }
 
-        private void TextUserEnter(object sender, EventArgs e)
-        {
-            if (txtUsername.Text.Equals(@"Username"))
-            {
-                txtUsername.Text = "";
-            }
-        }
-
-        private void TextUserLeave(object sender, EventArgs e)
-        {
-            if (txtUsername.Text.Equals(@""))
-            {
-                txtUsername.Text = "Username";
-            }
-        }
-
-        private void txtUserEnter(object sender, EventArgs e)
-        {
-            if (txtPassword.Text.Equals(@"Password"))
-            {
-                txtPassword.Text = "";
-            }
-        }
-
-        private void txtUserLeave(object sender, EventArgs e)
+        private void txtNameLeave(object sender, EventArgs e)
         {
             if (txtPassword.Text.Equals(@""))
             {
-                txtPassword.Text = "Password";
+                txtPassword.Text = "Admin";
             }
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            AdminLogin Ad = new AdminLogin();
-            Ad.Show();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(comboBox1.SelectedIndex)
+            switch (comboBox1.SelectedIndex)
             {
                 case 0:
                     Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
@@ -119,11 +121,6 @@ namespace PostOfficeManagement
             }
             this.Controls.Clear();
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button7_Click(object sender, EventArgs e)

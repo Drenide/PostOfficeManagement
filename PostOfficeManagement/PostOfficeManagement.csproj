@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CEA056A8-630A-48D4-A111-AF2CF4594CE9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PostOfficeManagement</RootNamespace>
+    <AssemblyName>PostOfficeManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\Desktop\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.Designer.cs">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DGVPrinter.cs" />
+    <Compile Include="Porosite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Porosite.Designer.cs">
+      <DependentUpon>Porosite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print.cs" />
+    <Compile Include="RegjistrimiAutomjetit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegjistrimiAutomjetit.Designer.cs">
+      <DependentUpon>RegjistrimiAutomjetit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegjistrimiKlientit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegjistrimiKlientit.Designer.cs">
+      <DependentUpon>RegjistrimiKlientit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegjistrimiPorosise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegjistrimiPorosise.Designer.cs">
+      <DependentUpon>RegjistrimiPorosise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegjistrimiPunetorit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegjistrimiPunetorit.Designer.cs">
+      <DependentUpon>RegjistrimiPunetorit.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminLogin.resx">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminLogin.sq.resx">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.sq.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Porosite.resx">
+      <DependentUpon>Porosite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegjistrimiAutomjetit.resx">
+      <DependentUpon>RegjistrimiAutomjetit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegjistrimiAutomjetit.sq.resx">
+      <DependentUpon>RegjistrimiAutomjetit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegjistrimiKlientit.resx">
+      <DependentUpon>RegjistrimiKlientit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegjistrimiKlientit.sq.resx">
+      <DependentUpon>RegjistrimiKlientit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegjistrimiPorosise.en.resx">
+      <DependentUpon>RegjistrimiPorosise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegjistrimiPorosise.resx">
+      <DependentUpon>RegjistrimiPorosise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RegjistrimiPorosise.sq.resx">
+      <DependentUpon>RegjistrimiPorosise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegjistrimiPunetorit.resx">
+      <DependentUpon>RegjistrimiPunetorit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegjistrimiPunetorit.sq.resx">
+      <DependentUpon>RegjistrimiPunetorit.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linkedin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_Icon_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash_register_Icon_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Order_history_Icon_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pickup_Icon_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PostOfficeManagement.BLL\PostOfficeManagement.BLL.csproj">
+      <Project>{6581ee35-7a14-4f77-9e4e-2de4cad24bb8}</Project>
+      <Name>PostOfficeManagement.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PostOfficeManagement.BO\PostOfficeManagement.BO.csproj">
+      <Project>{c9fc1154-c6d8-4d16-813f-25079003832b}</Project>
+      <Name>PostOfficeManagement.BO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PostOfficeManagement.DAL\PostOfficeManagement.DAL.csproj">
+      <Project>{4F1EF183-0B65-4746-9D63-7E20AEF8E608}</Project>
+      <Name>PostOfficeManagement.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1918daa9-9ab9-4269-818a-46b92d79e515.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1971-chevrolet-c10-cheyenne-fleetside-2wd-pickup-garth-glazier.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\local-courier-services-500x500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vetetima.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aadd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\33.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
